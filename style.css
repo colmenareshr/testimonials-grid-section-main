@@ -19,3 +19,46 @@ image {
   width: 100%;
   display: block;
 }
+
+.container {
+  width: 100%;
+  background-color: #edf2f8;
+  padding: 6rem;
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.testimonial__author img {
+  border-radius: 50%;
+}
+
+.testimonial__grid {
+  width: 100%;
+  max-width: 1440px ;
+  display: grid;
+  grid-template-areas: 
+  'one    one   two   five'
+  'three  four  four  five'
+  ;
+  gap: 1.25rem;
+}
+
+.testimonial__one {
+  grid-area: one;
+}
+.testimonial__two {
+  grid-area: two;
+}
+.testimonial__three {
+  grid-area: three;
+}
+.testimonial__four {
+  grid-area: four;
+}
+.testimonial__five {
+  grid-area: five;
+}
