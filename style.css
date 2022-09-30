@@ -45,10 +45,9 @@ h6 {
 
 .container {
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
   background-color: #edf2f8;
   padding: 6rem;
+  display: flex;
 }
 
 .testimonial__card {
@@ -70,11 +69,11 @@ h6 {
 .name {
   font-size: 0.9rem;
   font-weight: 600;
-  color: hsl(0, 0%, 81%);
+  color: var(--Light-gray);
 }
 
 .title {
-  color: hsl(0, 0%, 81%);
+  color: var(--Light-gray);
   opacity: 50%;
 }
 
@@ -96,8 +95,8 @@ h6 {
 
 .testimonial__grid {
   width: 100%;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
     'one    one   two   five'
     'three  four  four  five';
@@ -119,21 +118,21 @@ h6 {
 }
 .four {
   grid-area: four;
-  background-color: hsl(219, 29%, 14%);
+  background-color: var(--Very-dark-blackish-blue);
 }
 .five {
   grid-area: five;
   background-color: var(--White);
-  color: hsl(217, 19%, 35%);
+  color: var(--Very-dark-grayish-blue);
 }
 
 .three .info {
-  color: hsl(217, 19%, 35%);
+  color: var(--Very-dark-grayish-blue);
   opacity: 70%;
 }
 
 .five .info {
-  color: hsl(217, 19%, 35%);
+  color: var(--Very-dark-grayish-blue);
   opacity: 70%;
 }
 
@@ -143,4 +142,45 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 1rem;
+  }
+  .testimonial__grid {
+  grid-template-areas: 
+  'one five'
+  'two two'
+  'three four';
+  gap: 1.2rem;
+}
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .testimonial__grid {
+  grid-template-areas: 
+  'one one'
+  'two three'
+  'four five';
+  gap: 1.2rem;
+}
+}
+
+@media (max-width: 425px) {
+  .container {
+    padding: 1rem;
+  }
+  .testimonial__grid {
+  grid-template-areas: 
+  'one'
+  'two' 
+  'three'
+  'four' 
+  'five';
+  gap: 1.2rem;
+}
 }
