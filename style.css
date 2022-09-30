@@ -1,18 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
 
-*::before *::after {
-  box-sizing: border-box;
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+  --Light-gray: hsl(0, 0%, 81%);
 }
-
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
+  height: 100%;
+}
+
+body {
   width: 100%;
   font-family: 'Barlow Semi Condensed';
+  font-weight: 500;
   font-size: 13px;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
 }
 
 image {
@@ -20,10 +33,28 @@ image {
   display: block;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
 .container {
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   background-color: #edf2f8;
   padding: 6rem;
+}
+
+.testimonial__card {
+  color: var(--Light-grayish-blue);
+  border-radius: 10px;
+  padding: 1.8rem;
 }
 
 .testimonial__author {
@@ -36,29 +67,80 @@ image {
   border-radius: 50%;
 }
 
+.name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: hsl(0, 0%, 81%);
+}
+
+.title {
+  color: hsl(0, 0%, 81%);
+  opacity: 50%;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.info__strong {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.info {
+  color: var(--Light-gray);
+  opacity: 70px;
+}
+
 .testimonial__grid {
   width: 100%;
-  max-width: 1440px ;
   display: grid;
-  grid-template-areas: 
-  'one    one   two   five'
-  'three  four  four  five'
-  ;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    'one    one   two   five'
+    'three  four  four  five';
   gap: 1.25rem;
 }
 
-.testimonial__one {
+.one {
   grid-area: one;
+  background-color: var(--Moderate-violet);
 }
-.testimonial__two {
+.two {
   grid-area: two;
+  background-color: var(--Very-dark-grayish-blue);
 }
-.testimonial__three {
+.three {
   grid-area: three;
+  background-color: var(--White);
+  color: hsl(217, 19%, 35%);
 }
-.testimonial__four {
+.four {
   grid-area: four;
+  background-color: hsl(219, 29%, 14%);
 }
-.testimonial__five {
+.five {
   grid-area: five;
+  background-color: var(--White);
+  color: hsl(217, 19%, 35%);
+}
+
+.three .info {
+  color: hsl(217, 19%, 35%);
+  opacity: 70%;
+}
+
+.five .info {
+  color: hsl(217, 19%, 35%);
+  opacity: 70%;
+}
+
+footer {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
